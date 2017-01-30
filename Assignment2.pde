@@ -2,7 +2,7 @@ void setup()
 {
   size(1200,700);
   background(0);
-  Player player1 = new Player(25,100,350,'w','s',' ','c');
+  Player player1 = new Player(25,100,350,'w','s','a','d',' ','c');
   gameObjects.add(player1);
 
 }
@@ -31,6 +31,8 @@ boolean checkKey(int k)
 
 void draw()
 {
+  background(0);
+  stroke(255);  
   for (int i = gameObjects.size() -1 ; i >= 0  ; i --)
   {
     GameObject go = gameObjects.get(i); 
