@@ -40,4 +40,16 @@ class Player extends GameObject
     text("Ammo: " + ammo, 30, 20);
     shape(shape);
   }
+  
+  void update()
+  {
+    if (checkKey(up))
+    {
+      pos.x ++;    
+    }
+    if (checkKey(down))
+    {
+      pos.x --;
+    }
+  }
 }
