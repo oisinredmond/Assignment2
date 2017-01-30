@@ -1,13 +1,20 @@
 void setup()
 {
-  size(1000,700);
+  size(1200,700);
   background(0);
+  Player player1 = new Player(25,100,350,'w','s',' ','c');
+  gameObjects.add(player1);
+
 }
 
-Player player1 = new Player(100,350,30,'w','s',' ','c');
+ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 
 void draw()
 {
-  player1.create();
-  player1.render();
+  for (int i = gameObjects.size() -1 ; i >= 0  ; i --)
+  {
+    GameObject go = gameObjects.get(i); 
+    //go.update();
+    go.render();    
+  }
 }

@@ -8,8 +8,8 @@ class Player extends GameObject
   
   Player(float radius,float x, float y, char up,char down, char shoot, char bomb)
   {
-    super(radius);
     pos = new PVector(x,y);
+    this.radius = radius;
     this.up = up;
     this.down = down;
     this.shoot = shoot;
@@ -17,6 +17,7 @@ class Player extends GameObject
     this.health = 10;
     this.ammo = 50;
     this.radius = radius;
+    create();
   }
   
   void create()
@@ -35,6 +36,8 @@ class Player extends GameObject
   
   void render()
   {
+    text("Health: " + health, 30, 30);
+    text("Ammo: " + ammo, 30, 20);
     shape(shape);
   }
 }
