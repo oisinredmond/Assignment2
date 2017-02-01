@@ -1,7 +1,6 @@
 abstract class GameObject
 {
   PVector pos;
-  PVector forward;
   float radius;
   
   GameObject()
