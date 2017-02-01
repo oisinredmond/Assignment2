@@ -20,7 +20,7 @@ class Player extends GameObject
     this.right = right;
     this.shoot = shoot;
     this.bomb = bomb;
-    this.health = 10;
+    this.health = 100;
     this.ammo = 50;
     this.radius = radius;
     create();
@@ -42,8 +42,9 @@ class Player extends GameObject
   
   void render()
   {
-    text("Health: " + health, 30, 30);
-    text("Ammo: " + ammo, 30, 20);
+    text("Health: ", 30, 30);
+    rect(80,20,health,10);
+    text("Score: ",30,50);
     
     pushMatrix();
     translate(posp.x,posp.y);
