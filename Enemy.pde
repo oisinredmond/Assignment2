@@ -30,6 +30,7 @@ class Enemy extends GameObject
   
   void update()
   {
-    theta += 0.1f;
+    theta += random(0.04f,0.1f);
+    pos.x -= random(1,2);
   }
 }
