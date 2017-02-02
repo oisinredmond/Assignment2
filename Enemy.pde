@@ -2,6 +2,7 @@ class Enemy extends GameObject
 {
   PShape shape;
   float size;
+  float theta;
   float health;
   float rotation;
   float velocity;
@@ -12,28 +13,24 @@ class Enemy extends GameObject
     pos = new PVector(1100,random(50,650));
     this.health = random(5,20);
     this.size = health*3;
+    theta = 0;
     create();
-  }
-  
-  void create()
-  {
-    shape = createShape();
-    shape.beginShape();
-    shape.stroke(255,0,0);
-    shape.noFill();
-    shape.vertex(pos.x,pos.y);
-    shape.vertex(pos.x + size, pos.y);
-    shape.vertex(pos.x + size, pos.y + size);
-    shape.vertex(pos.x,pos.y+size);
-    shape.endShape(CLOSE);
   }
   
   void render()
   {
-    shape(shape,0,0);
+    pushMatrix();
+    translate(pos.x, pos.y);
+    noFill();
+    rotate(theta);
+    stroke(255, 0, 0);
+    rectMode(CENTER);
+    rect(0, 0, size, size);
+    popMatrix();
   }
   
   void update()
   {
+    theta += 0.1f;
   }
 }
