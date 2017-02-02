@@ -14,7 +14,6 @@ class Enemy extends GameObject
     this.health = random(5,20);
     this.size = health*3;
     theta = 0;
-    create();
   }
   
   void render()

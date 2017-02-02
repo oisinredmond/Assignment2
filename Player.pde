@@ -41,9 +41,13 @@ class Player extends GameObject
   
   void render()
   {
+    fill(255);
+    stroke(255);
+    rectMode(CORNER);
     text("Health: ", 30, 30);
-    rect(80,20,health,10);
     text("Score: ",30,50);
+    fill(0,255,0);
+    rect(80,20,health,10);
     
     pushMatrix();
     translate(pos.x,pos.y);
