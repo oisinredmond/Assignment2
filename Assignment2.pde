@@ -40,4 +40,10 @@ void draw()
     go.render();    
     go.update();
   }
+  
+  if(frameCount % 120 == 0)
+  {
+    Enemy e = new Enemy();
+    gameObjects.add(e);
+  }
 }

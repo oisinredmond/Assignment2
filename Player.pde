@@ -1,7 +1,6 @@
 class Player extends GameObject
 {  
   PShape shape;
-  PVector posp;
   char up,down,left,right,shoot,bomb;
   int health;
   int ammo;
@@ -12,7 +11,7 @@ class Player extends GameObject
   
   Player(float radius,float x, float y, char up,char down, char left, char right, char shoot, char bomb)
   {
-    posp = new PVector(x, y);
+    pos = new PVector(x, y);
     this.radius = radius;
     this.up = up;
     this.down = down;
@@ -33,10 +32,10 @@ class Player extends GameObject
     shape.stroke(255);
     shape.noFill();
     shape.strokeWeight(2);
-    shape.vertex(posp.x,posp.y);
-    shape.vertex(posp.x - radius, posp.y - radius);
-    shape.vertex(posp.x + radius, posp.y);
-    shape.vertex(posp.x - radius, posp.y + radius);
+    shape.vertex(pos.x,pos.y);
+    shape.vertex(pos.x - radius, pos.y - radius);
+    shape.vertex(pos.x + radius, pos.y);
+    shape.vertex(pos.x - radius, pos.y + radius);
     shape.endShape(CLOSE);
   }
   
@@ -47,7 +46,7 @@ class Player extends GameObject
     text("Score: ",30,50);
     
     pushMatrix();
-    translate(posp.x,posp.y);
+    translate(pos.x,pos.y);
     shape(shape,0,-350);
     popMatrix();
   }
@@ -56,7 +55,7 @@ class Player extends GameObject
   {
     if (checkKey(shoot) && elapsed > toPass)
     {
-      PVector bp = new PVector(posp.x,posp.y);
+      PVector bp = new PVector(pos.x,pos.y);
       Bullet b = new Bullet(bp.x, bp.y, 5, 20);
       gameObjects.add(b);
       elapsed = 0;
@@ -67,19 +66,19 @@ class Player extends GameObject
     
     if (checkKey(up))
     {
-      posp.y-=7;    
+      pos.y-=7;    
     }
     if (checkKey(down))
     {
-      posp.y +=7;
+      pos.y +=7;
     }
     if(checkKey(left))
     {
-      posp.x-=7;
+      pos.x-=7;
     }
     if(checkKey(right))
     {
-      posp.x+=7;
+      pos.x+=7;
     }
   }
 }
