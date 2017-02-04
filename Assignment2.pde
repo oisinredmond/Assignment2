@@ -10,6 +10,7 @@ ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
 boolean[] keys = new boolean[1000];
 
 float timeDelta = 1.0f / 60.0f;
+int score = 0;
 
 void keyPressed()
 { 

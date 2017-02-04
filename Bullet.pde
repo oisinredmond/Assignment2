@@ -43,7 +43,6 @@ class Bullet extends GameObject
         {
           e.health -=2;
           gameObjects.remove(this);
-          
         }
       }
     }
