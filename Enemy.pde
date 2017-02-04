@@ -3,7 +3,8 @@ class Enemy extends GameObject
   PShape shape;
   float size;
   float theta;
-  float health;
+  int health;
+  int tmp;
   float rotation;
   float velocity;
   float spawnrate;
@@ -11,8 +12,9 @@ class Enemy extends GameObject
   Enemy()
   {
     pos = new PVector(1100,random(50,650));
-    this.health = random(5,20);
+    this.health = int(random(5,20));
     this.size = health*3;
+    this.tmp = health;
     theta = 0;
   }
   
@@ -36,6 +38,7 @@ class Enemy extends GameObject
     if(this.health <= 0)
     {
       gameObjects.remove(this);
+      score += tmp*10;
     }
   }
 }

@@ -5,7 +5,7 @@ class Player extends GameObject
   int health;
   int ammo;
   
-  float fireRate = 10;
+  float fireRate = 5;
   float toPass = 1.0 / fireRate;
   float elapsed = toPass;
   
@@ -45,7 +45,7 @@ class Player extends GameObject
     stroke(255);
     rectMode(CORNER);
     text("Health: ", 30, 30);
-    text("Score: ",30,50);
+    text("Score: " + score,30,50);
     fill(0,255,0);
     rect(80,20,health*1.5,10);
     
