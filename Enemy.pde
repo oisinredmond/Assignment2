@@ -41,4 +41,16 @@ class Enemy extends GameObject
       score += tmp*10;
     }
   }
+  
+  void damaged()
+  {
+    pushMatrix();
+    translate(pos.x, pos.y);
+    noFill();
+    rotate(theta);
+    stroke(255, 0, 0);
+    rectMode(CENTER);
+    rect(0, 0, size + 10, size + 10);
+    popMatrix();
+  }
 }
