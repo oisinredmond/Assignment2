@@ -2,13 +2,13 @@ class Bullet extends GameObject
 {
   float size;
   float speed = 200;
-  PVector posb;
+  PVector pos;
   float timeToLive;
   float alive;
   
   Bullet(float x, float y, float size, float timeToLive)
   {
-    posb = new PVector(x,y);
+    pos = new PVector(x,y);
     this.size = size;
     this.timeToLive = timeToLive;    
     this.alive = 0;
@@ -17,7 +17,7 @@ class Bullet extends GameObject
   void render()
   {
     pushMatrix();
-    translate(posb.x,posb.y);
+    translate(pos.x,pos.y);
     stroke(255);
     line(100,0,100+size,0);
     popMatrix();
@@ -25,12 +25,27 @@ class Bullet extends GameObject
   
   void update()
   {
-    posb.x += 10;
+    pos.x += 10;
     
     alive += timeDelta;
     if (alive > timeToLive)
     {
       gameObjects.remove(this);
-    }    
+    }
+    
+    for(int i = 0 ; i < gameObjects.size() ; i ++)
+    {
+      GameObject go = gameObjects.get(i);
+      if (go instanceof Enemy)
+      {
+        Enemy e = (Enemy) go;
+        if(dist(go.pos.x, go.pos.y, this.pos.x, this.pos.y) < e.size)
+        {
+          e.health -=2;
+          gameObjects.remove(this);
+          
+        }
+      }
+    }
   }
 }

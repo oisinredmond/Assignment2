@@ -32,5 +32,10 @@ class Enemy extends GameObject
   {
     theta += random(0.04f,0.1f);
     pos.x -= random(1,2);
+
+    if(this.health <= 0)
+    {
+      gameObjects.remove(this);
+    }
   }
 }

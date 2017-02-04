@@ -47,7 +47,7 @@ class Player extends GameObject
     text("Health: ", 30, 30);
     text("Score: ",30,50);
     fill(0,255,0);
-    rect(80,20,health,10);
+    rect(80,20,health*1.5,10);
     
     pushMatrix();
     translate(pos.x,pos.y);
