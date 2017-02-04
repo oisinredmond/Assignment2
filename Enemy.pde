@@ -4,7 +4,7 @@ class Enemy extends GameObject
   float size;
   float theta;
   int health;
-  int tmp;
+  int temp;
   float rotation;
   float velocity;
   float spawnrate;
@@ -14,7 +14,7 @@ class Enemy extends GameObject
     pos = new PVector(1100,random(50,650));
     this.health = int(random(5,20));
     this.size = health*3;
-    this.tmp = health;
+    this.temp = health;
     theta = 0;
   }
   
@@ -34,11 +34,14 @@ class Enemy extends GameObject
   {
     theta += random(0.04f,0.1f);
     pos.x -= random(1,2);
-
     if(this.health <= 0)
     {
-      gameObjects.remove(this);
       score += tmp*10;
+      tmp = temp;
+      dead = true;
+      scorex = this.pos.x;
+      scorey = this.pos.y;
+      gameObjects.remove(this);
     }
   }
   

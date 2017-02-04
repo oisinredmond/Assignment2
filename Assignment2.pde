@@ -11,6 +11,10 @@ boolean[] keys = new boolean[1000];
 
 float timeDelta = 1.0f / 60.0f;
 int score = 0;
+int tmp;
+float scorex;
+float scorey;
+boolean dead = false;
 
 void keyPressed()
 { 
@@ -46,5 +50,11 @@ void draw()
   {
     Enemy e = new Enemy();
     gameObjects.add(e);
+  }
+  
+  if(dead)
+  {
+    text("+" + tmp*10,scorex,scorey);
+    scorey--;
   }
 }
