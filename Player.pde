@@ -29,11 +29,15 @@ class Player extends GameObject
     shape.beginShape();
     shape.stroke(255);
     shape.noFill();
-    shape.strokeWeight(2);
-    shape.vertex(pos.x,pos.y);
-    shape.vertex(pos.x - radius, pos.y - radius);
-    shape.vertex(pos.x + radius, pos.y);
-    shape.vertex(pos.x - radius, pos.y + radius);
+    shape.strokeWeight(1);
+    shape.vertex(pos.x - radius/2, pos.y - (radius/2) + 5);
+    shape.vertex(pos.x - radius,pos.y - radius);
+    shape.vertex(pos.x + radius, pos.y - ((radius/2) - 7));
+    shape.vertex(pos.x + radius/2,pos.y - ((radius/2) - 7));
+    shape.vertex(pos.x + radius/2, pos.y + (radius/2) - 7);
+    shape.vertex(pos.x + radius, pos.y + (radius/2) - 7);
+    shape.vertex(pos.x - radius,pos.y + radius);
+    shape.vertex(pos.x - radius/2, pos.y + (radius/2) - 5);
     shape.endShape(CLOSE);
   }
   
