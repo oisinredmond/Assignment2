@@ -12,6 +12,7 @@ boolean[] keys = new boolean[1000];
 float timeDelta = 1.0f / 60.0f;
 int score = 0;
 int tmp;
+int boundaryx = 300;
 float scorex;
 float scorey;
 boolean enemy_dead = false;
@@ -38,7 +39,9 @@ boolean checkKey(int k)
 void draw()
 {
   background(0);
-  stroke(255);  
+  stroke(0,0,255);
+  line(boundaryx,0,boundaryx,height);
+  stroke(255);
   for (int i = gameObjects.size() -1 ; i >= 0  ; i --)
   {
     GameObject go = gameObjects.get(i);
