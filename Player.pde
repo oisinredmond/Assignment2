@@ -44,6 +44,7 @@ class Player extends GameObject
     rectMode(CORNER);
     text("Health: ", 30, 30);
     text("Score: " + score,30,50);
+    text("Level: " + level,30,70);
     fill(0,255,0);
     rect(80,20,health*1.5,10);
     
