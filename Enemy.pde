@@ -5,6 +5,7 @@ class Enemy extends GameObject
   float theta;
   int health;
   int temp;
+  int speed;
   float rotation;
   float spawnrate;
   int x = 10;
@@ -16,6 +17,7 @@ class Enemy extends GameObject
     this.health = int(random(5,20));
     this.size = health*3;
     this.temp = health;
+    this.speed = level*1;
     theta = 0;
   }
   
@@ -23,7 +25,7 @@ class Enemy extends GameObject
   {
     pushMatrix();
     translate(pos.x, pos.y);
-    noFill();
+    fill(0);
     rotate(theta);
     stroke(255, 0, 0);
     strokeWeight(2);
@@ -35,7 +37,7 @@ class Enemy extends GameObject
   void update()
   {
     theta += random(0.04f,0.1f);
-    pos.x -= random(1,2);
+    pos.x -= speed;
     if(health <= 0)
     {
       score += tmp*10;

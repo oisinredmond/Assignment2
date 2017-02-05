@@ -28,7 +28,7 @@ class Player extends GameObject
     shape = createShape();
     shape.beginShape();
     shape.stroke(255);
-    shape.noFill();
+    shape.fill(100);
     shape.strokeWeight(1);
     shape.vertex(pos.x - radius/2, pos.y - (radius/2) + 5);
     shape.vertex(pos.x - radius,pos.y - radius);
