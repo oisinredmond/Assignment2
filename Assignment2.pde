@@ -14,7 +14,7 @@ int score = 0;
 int tmp;
 float scorex;
 float scorey;
-boolean dead = false;
+boolean enemy_dead = false;
 
 void keyPressed()
 { 
@@ -52,7 +52,7 @@ void draw()
     gameObjects.add(e);
   }
   
-  if(dead)
+  if(enemy_dead)
   {
     text("+" + tmp*10,scorex,scorey);
     scorey--;

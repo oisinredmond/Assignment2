@@ -38,7 +38,7 @@ class Enemy extends GameObject
     {
       score += tmp*10;
       tmp = temp;
-      dead = true;
+      enemy_dead = true;
       scorex = this.pos.x;
       scorey = this.pos.y;
       gameObjects.remove(this);
