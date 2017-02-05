@@ -50,6 +50,7 @@ class Enemy extends GameObject
       enemy_x = pos.x;
       enemy_y = pos.y;
       r = 10;
+      health -= 0.1;
       gameObjects.remove(this);
     }
   }
