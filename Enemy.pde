@@ -40,7 +40,7 @@ class Enemy extends GameObject
     pos.x -= speed;
     if(health <= 0)
     {
-      score += tmp*10;
+      score += tmp*10*level;
       tmp = temp;
       enemy_dead = true;
       enemy_x = pos.x;
