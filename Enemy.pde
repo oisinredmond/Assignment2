@@ -26,6 +26,7 @@ class Enemy extends GameObject
     noFill();
     rotate(theta);
     stroke(255, 0, 0);
+    strokeWeight(2);
     rectMode(CENTER);
     rect(0, 0, size, size);
     popMatrix();
@@ -50,6 +51,7 @@ class Enemy extends GameObject
       enemy_x = pos.x;
       enemy_y = pos.y;
       r = 10;
+      explode = false;
       health -= 0.1;
       gameObjects.remove(this);
     }

@@ -12,6 +12,7 @@ boolean[] keys = new boolean[1000];
 float timeDelta = 1.0f / 60.0f;
 int score = 0;
 float health = 100;
+int level = 1;
 int tmp;
 int r;
 int boundaryx = 300;
@@ -52,7 +53,7 @@ void draw()
     go.update();
   }
   
-  if(frameCount % 120 == 0)
+  if(frameCount % 300*(1/level) == 0)
   {
     Enemy e = new Enemy();
     gameObjects.add(e);
