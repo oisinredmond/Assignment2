@@ -59,6 +59,12 @@ void draw()
     gameObjects.add(e);
   }
   
+  if(frameCount % 20 == 0)
+  {
+    Star s = new Star();
+    gameObjects.add(s);
+  }
+  
   if(enemy_dead)
   {
     text("+" + tmp*10,enemy_x,enemy_y);
