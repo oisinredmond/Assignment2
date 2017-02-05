@@ -11,11 +11,14 @@ boolean[] keys = new boolean[1000];
 
 float timeDelta = 1.0f / 60.0f;
 int score = 0;
+float health = 100;
 int tmp;
+int r;
 int boundaryx = 300;
-float scorex;
-float scorey;
+float enemy_x;
+float enemy_y;
 boolean enemy_dead = false;
+boolean explode = false;
 
 void keyPressed()
 { 
@@ -57,7 +60,16 @@ void draw()
   
   if(enemy_dead)
   {
-    text("+" + tmp*10,scorex,scorey);
-    scorey--;
+    text("+" + tmp*10,enemy_x,enemy_y);
+    enemy_y--;
+  }
+  if(explode)
+  {
+    ellipseMode(CENTER);
+    noFill();
+    stroke(255,255,0);
+    strokeWeight(2);
+    ellipse(enemy_x,enemy_y,r,r);
+    r++;
   }
 }

@@ -6,8 +6,9 @@ class Enemy extends GameObject
   int health;
   int temp;
   float rotation;
-  float velocity;
   float spawnrate;
+  int x = 10;
+  int y = 10;
   
   Enemy()
   {
@@ -39,8 +40,16 @@ class Enemy extends GameObject
       score += tmp*10;
       tmp = temp;
       enemy_dead = true;
-      scorex = this.pos.x;
-      scorey = this.pos.y;
+      enemy_x = pos.x;
+      enemy_y = pos.y;
+      gameObjects.remove(this);
+    }
+    if(pos.x < boundaryx)
+    {
+      explode = true;
+      enemy_x = pos.x;
+      enemy_y = pos.y;
+      r = 10;
       gameObjects.remove(this);
     }
   }
