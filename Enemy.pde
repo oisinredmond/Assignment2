@@ -50,7 +50,14 @@ class Enemy extends GameObject
       tmp = temp;
       enemy_x = pos.x;
       enemy_y = pos.y;
-      score += tmp*10;
+      for(int i = 0; i < tmp*10; i++)
+      {
+        score ++;
+        if(score % 2000 == 0)
+        {
+          level++;
+        }
+      }
       enemy_dead = true;
       gameObjects.remove(this);
     }

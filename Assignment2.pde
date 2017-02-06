@@ -52,7 +52,7 @@ void draw()
     go.update();
   }
   
-  if(frameCount % 300*(1/level) == 0)
+  if(frameCount % 300/(level*0.5) == 0)
   {
     Enemy e = new Enemy();
     gameObjects.add(e);
