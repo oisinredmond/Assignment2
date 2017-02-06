@@ -4,7 +4,6 @@ class Enemy extends GameObject
   float size;
   float theta;
   int enemy_health;
-  int temp;
   int speed;
   float rotation;
   float spawnrate;
@@ -16,8 +15,8 @@ class Enemy extends GameObject
     pos = new PVector(width + 50,random(50,height-50));
     this.enemy_health = int(random(5,30));
     this.size = enemy_health*3;
-    this.temp = enemy_health;
     this.speed = level*1;
+    tmp = enemy_health;
     theta = 0;
   }
   
@@ -41,7 +40,6 @@ class Enemy extends GameObject
     if(enemy_health <=0 && pos.x > boundaryx)
     {
       score += tmp*10*level;
-      tmp = temp;
       enemy_dead = true;
       enemy_x = pos.x;
       enemy_y = pos.y;
