@@ -12,7 +12,7 @@ boolean[] keys = new boolean[1000];
 float timeDelta = 1.0f / 60.0f;
 int score = 0;
 float health = 100;
-int level = 3;
+int level = 1;
 int tmp;
 int boundaryx = 300;
 float enemy_x;

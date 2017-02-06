@@ -4,7 +4,7 @@ class Player extends GameObject
   char up,down,left,right,shoot,bomb;
   int ammo;
   
-  float fireRate = 5;
+  float fireRate = 6;
   float toPass = 1.0 / fireRate;
   float elapsed = toPass;
   
@@ -73,11 +73,11 @@ class Player extends GameObject
     
     if (checkKey(up))
     {
-      pos.y-=7;    
+      pos.y-=8;    
     }
     if (checkKey(down))
     {
-      pos.y +=7;
+      pos.y +=8;
     }
     if(checkKey(left))
     {
