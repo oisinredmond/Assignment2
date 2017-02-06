@@ -70,13 +70,15 @@ void draw()
     text("+" + tmp*10,enemy_x,enemy_y);
     enemy_y--;
   }
-  if(explode)
+  
+  if(explode && r < 80)
   {
     ellipseMode(CENTER);
     noFill();
     stroke(255,255,0);
     strokeWeight(2);
     ellipse(enemy_x,enemy_y,r,r);
-    r++;
+    r+=2;
+    health -= 0.1;
   }
 }

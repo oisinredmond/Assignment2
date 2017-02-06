@@ -3,7 +3,7 @@ class Enemy extends GameObject
   PShape shape;
   float size;
   float theta;
-  int health;
+  int enemy_health;
   int temp;
   int speed;
   float rotation;
@@ -13,10 +13,10 @@ class Enemy extends GameObject
   
   Enemy()
   {
-    pos = new PVector(1100,random(50,650));
-    this.health = int(random(5,20));
-    this.size = health*3;
-    this.temp = health;
+    pos = new PVector(width + 50,random(50,height-50));
+    this.enemy_health = int(random(5,20));
+    this.size = enemy_health*3;
+    this.temp = enemy_health;
     this.speed = level*1;
     theta = 0;
   }
@@ -38,7 +38,7 @@ class Enemy extends GameObject
   {
     theta += random(0.04f,0.1f);
     pos.x -= speed;
-    if(health <= 0)
+    if(enemy_health <=0 && pos.x > boundaryx)
     {
       score += tmp*10*level;
       tmp = temp;
@@ -47,15 +47,14 @@ class Enemy extends GameObject
       enemy_y = pos.y;
       gameObjects.remove(this);
     }
+    
     if(pos.x < boundaryx)
     {
       explode = true;
       enemy_x = pos.x;
       enemy_y = pos.y;
-      r = 10;
-      explode = false;
-      health -= 0.1;
       gameObjects.remove(this);
+      r = 10;
     }
   }
   

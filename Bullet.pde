@@ -41,7 +41,7 @@ class Bullet extends GameObject
         Enemy e = (Enemy) go;
         if(dist(go.pos.x, go.pos.y, this.pos.x, this.pos.y) < e.size)
         {
-          e.health -=2;
+          e.enemy_health -=2;
           gameObjects.remove(this);
           e.damaged();
         }
