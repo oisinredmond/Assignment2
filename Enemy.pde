@@ -5,6 +5,7 @@ class Enemy extends GameObject
   float theta;
   int enemy_health;
   int speed;
+  int temp;
   float rotation;
   float spawnrate;
   int x = 10;
@@ -16,7 +17,7 @@ class Enemy extends GameObject
     this.enemy_health = int(random(5,30));
     this.size = enemy_health*3;
     this.speed = level*1;
-    tmp = enemy_health;
+    this.temp = enemy_health;
     theta = 0;
   }
   
@@ -37,22 +38,21 @@ class Enemy extends GameObject
   {
     theta += random(0.04f,0.1f);
     pos.x -= speed;
-    if(enemy_health <=0 && pos.x > boundaryx)
-    {
-      score += tmp*10*level;
-      enemy_dead = true;
-      enemy_x = pos.x;
-      enemy_y = pos.y;
-      gameObjects.remove(this);
-    }
     
     if(pos.x < boundaryx)
     {
-      explode = true;
+      health -= 5;
+      gameObjects.remove(this);
+    }
+    
+    if(enemy_health <= 0)
+    {
+      tmp = temp;
       enemy_x = pos.x;
       enemy_y = pos.y;
+      score += tmp*10;
+      enemy_dead = true;
       gameObjects.remove(this);
-      r = 10;
     }
   }
   

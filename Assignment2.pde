@@ -14,7 +14,6 @@ int score = 0;
 float health = 100;
 int level = 1;
 int tmp;
-int r;
 int boundaryx = 300;
 float enemy_x;
 float enemy_y;
@@ -69,16 +68,5 @@ void draw()
   {
     text("+" + tmp*10,enemy_x,enemy_y);
     enemy_y--;
-  }
-  
-  if(explode && r < 80)
-  {
-    ellipseMode(CENTER);
-    noFill();
-    stroke(255,255,0);
-    strokeWeight(2);
-    ellipse(enemy_x,enemy_y,r,r);
-    r+=2;
-    health -= 0.1;
   }
 }
