@@ -12,7 +12,7 @@ boolean[] keys = new boolean[1000];
 float timeDelta = 1.0f / 60.0f;
 int score = 0;
 float health = 100;
-int level = 1;
+int level = 3;
 int tmp;
 int boundaryx = 300;
 float enemy_x;
@@ -52,7 +52,9 @@ void draw()
     go.update();
   }
   
-  if(frameCount % 400/level == 0)
+  float spawnrate = (400/(level))*2;
+  
+  if(frameCount %  random(spawnrate, spawnrate/2) == 0)
   {
     Enemy e = new Enemy();
     gameObjects.add(e);

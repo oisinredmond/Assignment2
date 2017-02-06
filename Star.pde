@@ -11,6 +11,7 @@ class Star extends GameObject
   void render()
   {
     stroke(255);
+    strokeWeight(1);
     ellipse(pos.x,pos.y,1,1);
   }
   
