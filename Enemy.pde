@@ -14,7 +14,7 @@ class Enemy extends GameObject
   Enemy()
   {
     pos = new PVector(width + 50,random(50,height-50));
-    this.enemy_health = int(random(5,20));
+    this.enemy_health = int(random(5,30));
     this.size = enemy_health*3;
     this.temp = enemy_health;
     this.speed = level*1;
