@@ -75,7 +75,7 @@ void draw()
     gameObjects.add(s);
   }
   
-  if(frameCount % random(480,600)==0)
+  if(frameCount % 1400 == 0)
   {
     Health h = new Health();
     gameObjects.add(h);

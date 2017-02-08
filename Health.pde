@@ -1,7 +1,6 @@
 class Health extends GameObject
 {
   float radius;
-  PShape shape;
   Health()
   {
     this.pos = new PVector(width + 50,random(50,height-50));
@@ -23,18 +22,5 @@ class Health extends GameObject
   void update()
   {
     pos.x --;
-    for(int i = 0 ; i < gameObjects.size() ; i ++)
-    {
-      GameObject go = gameObjects.get(i);
-      if (go instanceof Player)
-      {
-        Player p = (Player) go;
-        if(dist(go.pos.x, go.pos.y, this.pos.x, this.pos.y) < p.radius)
-        {
-          health += 5;
-          gameObjects.remove(this);
-        }
-      }
-    }
   }
 }

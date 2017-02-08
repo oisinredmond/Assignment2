@@ -46,6 +46,16 @@ class Bullet extends GameObject
           e.damaged();
         }
       }
+      else if (go instanceof Health)
+      {
+        Health h = (Health) go;
+        if(dist(go.pos.x, go.pos.y, this.pos.x, this.pos.y) < h.radius)
+        {
+          health += 5;
+          gameObjects.remove(go);
+          gameObjects.remove(this);
+        }
+      }
     }
   }
 }
