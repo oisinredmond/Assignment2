@@ -53,7 +53,7 @@ class Enemy extends GameObject
       for(int i = 0; i < tmp*10; i++)
       {
         score ++;
-        if(score % 1500 == 0)
+        if(score % 1000 == 0)
         {
           level++;
         }
