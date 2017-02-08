@@ -12,6 +12,7 @@ boolean[] keys = new boolean[1000];
 float timeDelta = 1.0f / 60.0f;
 int score = 0;
 float health = 100;
+float spawnrate;
 int level = 1;
 int tmp;
 int boundaryx = 300;
@@ -45,6 +46,7 @@ void draw()
   stroke(0,0,255);
   line(boundaryx,0,boundaryx,height);
   stroke(255);
+  
   for (int i = gameObjects.size() -1 ; i >= 0  ; i --)
   {
     GameObject go = gameObjects.get(i);
@@ -52,9 +54,16 @@ void draw()
     go.update();
   }
   
-  float spawnrate = (400/(level))*2;
+  if(level != 1)
+  {
+    spawnrate = (400/(level))*2;
+  }
+  else
+  {
+    spawnrate = 300;
+  }
   
-  if(frameCount %  random(spawnrate, spawnrate/2) == 0)
+  if(frameCount % random(spawnrate, spawnrate/2) == 0)
   {
     Enemy e = new Enemy();
     gameObjects.add(e);
