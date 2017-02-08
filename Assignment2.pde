@@ -13,6 +13,7 @@ float timeDelta = 1.0f / 60.0f;
 int score = 0;
 float health = 100;
 float spawnrate;
+float fireRate = 6;
 int level = 1;
 int tmp;
 int boundaryx = 300;
@@ -77,17 +78,8 @@ void draw()
   
   if(frameCount % 1400 == 0)
   {
-    int k = int(random(0,1));
-    if(k==0)
-    {
       Health h = new Health();
       gameObjects.add(h);
-    }
-    else
-    {
-      RapidFire r = new RapidFire();
-      gameObjects.add(r);
-    }
   }
   
   if(enemy_dead)

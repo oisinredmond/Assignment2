@@ -4,7 +4,6 @@ class Player extends GameObject
   char up,down,left,right,shoot,bomb;
   int ammo;
   float radius;
-  float fireRate = 6;
   float toPass = 1.0 / fireRate;
   float elapsed = toPass;
   
