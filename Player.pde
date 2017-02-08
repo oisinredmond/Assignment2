@@ -45,6 +45,7 @@ class Player extends GameObject
     fill(255);
     stroke(255);
     rectMode(CORNER);
+    textSize(13);
     text("Health: ", 20, 30);
     text(health, 220, 30);
     text("Score: " + score,20,50);

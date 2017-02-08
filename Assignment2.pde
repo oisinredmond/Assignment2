@@ -46,7 +46,7 @@ void draw()
 {
   background(0);
   
-  while(health > 0 && start == true)
+  if(health > 0 && start == true)
   {
     stroke(0,0,255);
     line(boundaryx,0,boundaryx,height);
@@ -91,13 +91,20 @@ void draw()
       enemy_y--;
     }
   }
-  fill(255);
-  rect(width/2 - 150,height/2 - 50,300,100);
-  textSize(70);
-  fill(0);
-  strokeWeight(3);
-  text("START", width/2 - 110,height/2 + 30);
-  fill(255,0,0);
-  text("ASTEROID WARS",width/2 - 250, height/2 - 200);
-  
+  if(start == false)
+  {
+    fill(255);
+    if(mouseX > width/2 - 150 && mouseX < width/2 + 150 && mouseY > height/2-50 && mouseY < height/2 + 50 && mousePressed)
+    {
+      fill(0,255,0);
+      start = true;
+    }
+    rect(width/2 - 150,height/2 - 50,300,100);
+    textSize(70);
+    fill(0);
+    strokeWeight(3);
+    text("START", width/2 - 110,height/2 + 30);
+    fill(255,0,0);
+    text("ASTEROID WARS",width/2 - 250, height/2 - 200);
+  }
 }
