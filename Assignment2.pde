@@ -4,9 +4,6 @@ void setup()
   background(0);
   Player player1 = new Player(25,100,350,'w','s','a','d',' ','c');
   gameObjects.add(player1);
-    
-  Health h = new Health();
-  gameObjects.add(h);
 }
 
 ArrayList<GameObject> gameObjects = new ArrayList<GameObject>();
@@ -76,6 +73,12 @@ void draw()
   {
     Star s = new Star();
     gameObjects.add(s);
+  }
+  
+  if(frameCount % random(480,600)==0)
+  {
+    Health h = new Health();
+    gameObjects.add(h);
   }
   
   if(enemy_dead)
