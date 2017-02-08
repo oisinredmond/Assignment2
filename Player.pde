@@ -46,11 +46,12 @@ class Player extends GameObject
     fill(255);
     stroke(255);
     rectMode(CORNER);
-    text("Health: ", 30, 30);
-    text("Score: " + score,30,50);
-    text("Level: " + level,30,70);
+    text("Health: ", 20, 30);
+    text(health, 220, 30);
+    text("Score: " + score,20,50);
+    text("Level: " + level,20,70);
     fill(0,255,0);
-    rect(80,20,health*1.5,10);
+    rect(70,20,health*1.5,10);
     
     pushMatrix();
     translate(pos.x,pos.y);
