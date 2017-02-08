@@ -4,7 +4,7 @@ An asteroid shooter for OOP assignment 2
 
 #YouTube Video
 
-(https://www.youtube.com/watch?v=1Hnp1juFaeU&feature=youtu.be)  
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/1Hnp1juFaeU&feature=youtu.be/0.jpg)](https://www.youtube.com/watch?v=1Hnp1juFaeU&feature=youtu.be)
 
 # Description
 Asteroid wars is a game in which the player controls a spaceship and must shoot oncoming asteroids to survive. The speed and spawn rate of the oncoming asteroids increases with every level.
