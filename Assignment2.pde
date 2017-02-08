@@ -77,8 +77,17 @@ void draw()
   
   if(frameCount % 1400 == 0)
   {
-    Health h = new Health();
-    gameObjects.add(h);
+    int k = int(random(0,1));
+    if(k==0)
+    {
+      Health h = new Health();
+      gameObjects.add(h);
+    }
+    else
+    {
+      RapidFire r = new RapidFire();
+      gameObjects.add(r);
+    }
   }
   
   if(enemy_dead)
